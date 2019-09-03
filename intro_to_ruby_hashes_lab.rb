@@ -25,14 +25,8 @@ def read_from_hash(hash, key)
 end
 
 def update_counting_hash(hash, key)
-  hash[key]
-  
-  if hash[key].include? 
-    hash[key] += 1
-  else 
-    hash[key] = 1
-    hash 
-  end  
+  hash[key] ? hash[key] += 1 : hash[key] = 1
+  hash
     
   # given a hash an a key as parameters, return an updated hash
   # if the provided key is not present in the hash, add it and assign it to the value of 1
